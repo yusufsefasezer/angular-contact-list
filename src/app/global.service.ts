@@ -6,7 +6,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   providedIn: 'root'
 })
 export class GlobalService {
-  public title = 'AngularJS Contact List';
+  public title = 'Angular Contact List';
   public RESIZE_IMAGE = true;
   public MAX = 250;
 

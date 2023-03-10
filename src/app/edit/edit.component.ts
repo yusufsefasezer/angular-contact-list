@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { WrapperService } from '../wrapper.service';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { WrapperService } from '../wrapper.service';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditComponent implements OnInit {
+export class EditComponent {
 
   constructor(
     private wrapperService: WrapperService,
@@ -20,8 +20,6 @@ export class EditComponent implements OnInit {
     this.wrapperService.checkContact(this.id);
     this.wrapperService.setCopyContact(this.id);
   }
-
-  ngOnInit() { }
 
   get id(): number {
     return parseInt(this.route.snapshot.paramMap.get('id'), 10);

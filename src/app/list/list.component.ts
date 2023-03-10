@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { WrapperService } from '../wrapper.service';
 
 @Component({
@@ -6,11 +6,8 @@ import { WrapperService } from '../wrapper.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
-  constructor(
-    private wrapperService: WrapperService) { }
-
-  ngOnInit() { }
+  constructor(private wrapperService: WrapperService) { }
 
 }

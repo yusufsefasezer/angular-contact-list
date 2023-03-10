@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { WrapperService } from '../wrapper.service';
 
 @Component({
@@ -6,10 +6,8 @@ import { WrapperService } from '../wrapper.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
 
   constructor(private wrapperService: WrapperService) { }
-
-  ngOnInit() { }
 
 }

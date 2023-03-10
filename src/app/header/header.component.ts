@@ -8,6 +8,6 @@ import { WrapperService } from '../wrapper.service';
 })
 export class HeaderComponent {
 
-  constructor(private wrapperService: WrapperService) { }
+  constructor(public wrapperService: WrapperService) { }
 
 }

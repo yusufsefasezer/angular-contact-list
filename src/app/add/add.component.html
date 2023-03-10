@@ -20,7 +20,7 @@
         <input type="text" formControlName="name" class="form-control" autofocus="autofocus" id="fullname"
           name="fullname" placeholder="Enter full name" required="required"
           [(ngModel)]="wrapperService.globalService.currentContact.name"
-          [ngClass]="{'is-invalid': f.name.touched && f.name.invalid}" />
+          [ngClass]="{'is-invalid': f['name'].touched && f['name'].invalid}" />
       </div>
     </div>
 
@@ -31,7 +31,7 @@
         <input type="email" formControlName="email" class="form-control" id="email" name="email"
           placeholder="Enter email address" required="required"
           [(ngModel)]="wrapperService.globalService.currentContact.email"
-          [ngClass]="{'is-invalid': f.email.touched && f.email.invalid}" />
+          [ngClass]="{'is-invalid': f['email'].touched && f['email'].invalid}" />
       </div>
     </div>
 
@@ -42,7 +42,7 @@
         <input type="tel" formControlName="phone" class="form-control" id="phone" name="phone"
           placeholder="Enter phone number" required="required" minlength="10"
           [(ngModel)]="wrapperService.globalService.currentContact.phone"
-          [ngClass]="{'is-invalid': f.phone.touched && f.phone.invalid}" />
+          [ngClass]="{'is-invalid': f['phone'].touched && f['phone'].invalid}" />
       </div>
     </div>
 
@@ -52,7 +52,7 @@
       <div class="col-sm-10">
         <input type="url" formControlName="url" class="form-control" id="url" name="url" placeholder="Enter URL"
           [(ngModel)]="wrapperService.globalService.currentContact.url"
-          [ngClass]="{'is-invalid': f.url.touched && f.url.invalid}" />
+          [ngClass]="{'is-invalid': f['url'].touched && f['url'].invalid}" />
       </div>
     </div>
 
@@ -62,7 +62,7 @@
       <div class="col-sm-10">
         <textarea rows="3" formControlName="address" class="form-control" id="address" name="address"
           placeholder="Enter address" [(ngModel)]="wrapperService.globalService.currentContact.address"
-          [ngClass]="{'is-invalid': f.address.touched && f.address.invalid}"></textarea>
+          [ngClass]="{'is-invalid': f['address'].touched && f['address'].invalid}"></textarea>
       </div>
     </div>
 
@@ -72,7 +72,7 @@
       <div class="col-sm-10">
         <textarea rows="3" formControlName="notes" class="form-control" id="notes" name="notes" placeholder="Enter note"
           [(ngModel)]="wrapperService.globalService.currentContact.notes"
-          [ngClass]="{'is-invalid': f.notes.touched && f.notes.invalid}"></textarea>
+          [ngClass]="{'is-invalid': f['notes'].touched && f['notes'].invalid}"></textarea>
       </div>
     </div>
 

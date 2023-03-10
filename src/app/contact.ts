@@ -15,6 +15,10 @@ export class Contact {
     this.checked = false;
   }
 
+  static empty(){
+    return new Contact('', '', '', '', '/assets/no-image.svg', '', '');
+  }
+
   formatPhoneNumber() {
     if (this.phone) {
       return this.phone.substr(0, 3) + ' ' + this.phone.substr(0, 3) + ' ' + this.phone.substr(0, 3);

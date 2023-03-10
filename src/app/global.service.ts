@@ -20,10 +20,10 @@ export class GlobalService {
   public selectedCount = 0;
   public searchTerm = '';
 
-  public contacts: Contact[];
-  public currentContact: Contact;
+  public contacts: Contact[] = [];
+  public currentContact: Contact = Contact.empty();
 
-  public contactForm: FormGroup;
+  public contactForm: FormGroup = new FormGroup({});
 
   constructor() { }
 

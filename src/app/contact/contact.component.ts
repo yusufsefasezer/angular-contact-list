@@ -10,11 +10,11 @@ import { WrapperService } from '../wrapper.service';
 })
 export class ContactComponent {
 
-  @Input() private contact: Contact;
+  @Input() public contact: Contact = Contact.empty();
 
   constructor(
-    private wrapperService: WrapperService,
-    private sanitizer: DomSanitizer
+    public wrapperService: WrapperService,
+    public sanitizer: DomSanitizer
   ) { }
 
 }

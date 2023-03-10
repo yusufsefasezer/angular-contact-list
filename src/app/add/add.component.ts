@@ -12,13 +12,13 @@ export class AddComponent implements OnInit {
 
   constructor(
     public wrapperService: WrapperService,
-    private sanitizer: DomSanitizer) {
+    public sanitizer: DomSanitizer) {
     this.wrapperService.globalService.createContactForm();
   }
 
   ngOnInit() {
     this.wrapperService.globalService.showAdd();
-    this.wrapperService.globalService.currentContact = new Contact('', '', '', '', '/assets/no-image.svg', '', '');
+    this.wrapperService.globalService.currentContact = Contact.empty();
   }
 
   get f() {

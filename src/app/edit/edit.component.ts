@@ -11,8 +11,8 @@ import { WrapperService } from '../wrapper.service';
 export class EditComponent {
 
   constructor(
-    private wrapperService: WrapperService,
-    private sanitizer: DomSanitizer,
+    public wrapperService: WrapperService,
+    public sanitizer: DomSanitizer,
     private route: ActivatedRoute
   ) {
     this.wrapperService.globalService.createContactForm();
@@ -22,7 +22,8 @@ export class EditComponent {
   }
 
   get id(): number {
-    return parseInt(this.route.snapshot.paramMap.get('id'), 10);
+    let id: string = this.route.snapshot.params['id'];
+    return parseInt(id, 10);
   }
 
   get f() {

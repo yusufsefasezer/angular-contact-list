@@ -18,9 +18,10 @@ export class WrapperService {
   }
 
   getContact(id: number): Contact {
-    return this.globalService.contacts.find((contact) => {
+    let foundContact = this.globalService.contacts.find((contact) => {
       return contact.id === id;
     });
+    return foundContact as Contact;
   }
 
   setContact(id: number) {
@@ -72,7 +73,7 @@ export class WrapperService {
 
   showImage(event: Event) {
     const targetElement: HTMLInputElement = event.target as HTMLInputElement;
-    const selectedFiles: FileList = targetElement.files;
+    const selectedFiles: FileList = targetElement.files as FileList;
 
     if (selectedFiles.length !== 1) {
       return false;
@@ -85,11 +86,11 @@ export class WrapperService {
 
     const fileReader: FileReader = new FileReader();
 
-    fileReader.addEventListener('load', (readerEvent: FileReaderEvent) => {
+    fileReader.addEventListener('load', (readerEvent: any) => {
 
       const newImage = new Image();
       const canvas: HTMLCanvasElement = document.createElement('canvas');
-      const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
+      const ctx: CanvasRenderingContext2D = canvas.getContext('2d') as CanvasRenderingContext2D;
       const MAX = this.globalService.MAX;
 
       newImage.addEventListener('load', () => {
@@ -113,12 +114,4 @@ export class WrapperService {
     return true;
   }
 
-}
-
-interface FileReaderEventTarget extends EventTarget {
-  result: string;
-}
-
-interface FileReaderEvent extends Event {
-  target: FileReaderEventTarget;
 }

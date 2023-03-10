@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: 'subdir/package-lock.json'
 
       - name: Checkout
         uses: actions/checkout@v3.3.0

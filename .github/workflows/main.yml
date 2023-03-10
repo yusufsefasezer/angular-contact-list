@@ -13,8 +13,7 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'subdir/package-lock.json'
+          #cache: 'npm'
 
       - name: Checkout
         uses: actions/checkout@v3.3.0

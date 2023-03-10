@@ -1,0 +1,32 @@
+name: 'CI / CD for Angular'
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1.0.7
+        with:
+          # Artifact name
+          #name: # optional, default is github-pages
+          # Path of the directory containing the static assets.
+          path: dist
+          # Duration after which artifact will expire in days.
+          # retention-days: # optional, default is 1
